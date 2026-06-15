@@ -11,103 +11,190 @@
     <!-- Cabecera Limpia -->
     <div class="animate-on-scroll text-center max-w-4xl mx-auto mb-16">
       <h2 class="text-gold-deep text-[10px] sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 text-glow">INGENIERÍA DE SOFTWARE DE ALTO NIVEL</h2>
-      <h3 class="text-3xl md:text-5xl font-normal font-heading mb-6 text-white tracking-wide">Ecosistemas Digitales <span class="italic text-gold-bright">Resilientes y Robustos</span></h3>
+      <h3 class="text-3xl md:text-5xl font-normal font-heading mb-6 text-white tracking-wide">Sistemas Digitales <span class="italic text-gold-bright">Estables, Rápidos y Seguros</span></h3>
       <div class="w-16 h-px bg-gold-deep/50 mx-auto mb-8 shadow-[0_0_10px_rgba(136,192,208,0.8)]"></div>
       <p class="text-gray-300 text-base md:text-lg font-light leading-relaxed max-w-3xl mx-auto">
-        Construimos arquitecturas enterprise diseñadas para escalar de forma inquebrantable, integrando la estabilidad de una base sólida con la flexibilidad de la innovación continua.
+        Creamos plataformas digitales de alta ingeniería diseñadas para funcionar sin interrupciones, garantizando velocidad extrema y protegiendo la información de su empresa bajo estándares de seguridad avanzados.
       </p>
     </div>
 
-    <!-- Diseño de Ecosistema: Explicación Intuitiva + Diagrama Visual -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
+    <!-- Bento Grid Layout: Compact & Clean -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 max-w-5xl mx-auto">
       
-      <!-- Columna Izquierda: Explicaciones sin tecnicismos complejos -->
-      <div class="lg:col-span-6 space-y-4">
+      <!-- Card 1: Alta Disponibilidad (lg:col-span-5) -->
+      <div class="animate-on-scroll lg:col-span-5 glass-card p-6 flex flex-col justify-between rounded-xl border border-gray-800 relative group overflow-hidden transition-all hover:border-gold-deep/30">
+        <!-- Inside Card Glow -->
+        <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-gold-deep/5 to-transparent pointer-events-none"></div>
         
-        <!-- Tarjeta 1: Alta Disponibilidad -->
-        <div class="animate-on-scroll glass-card p-5 rounded-xl border border-gray-800 transition-all hover:border-gold-deep/30 flex items-start gap-4 group">
-          <!-- Icono SVG Servidor/Redundancia -->
-          <div class="p-3 bg-gold-deep/10 rounded-lg text-gold-bright transition-colors group-hover:bg-gold-deep/20 shrink-0">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="2" y="2" width="20" height="8" rx="2" />
-              <rect x="2" y="14" width="20" height="8" rx="2" />
-              <line x1="6" y1="6" x2="6.01" y2="6" stroke-width="2" />
-              <line x1="6" y1="18" x2="6.01" y2="18" stroke-width="2" />
-              <path d="M17 6h1" />
-              <path d="M17 18h1" />
-            </svg>
-          </div>
-          <div>
-            <h4 class="text-base font-heading font-semibold text-white mb-1 group-hover:text-gold-bright transition-colors">Alta Disponibilidad <span class="italic text-gold-deep text-xs font-normal block sm:inline sm:ml-2">(Tu web nunca se detiene)</span></h4>
-            <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed">
-              Tu plataforma permanece activa el 99.99% del tiempo. Si un servidor falla, otro toma su lugar automáticamente al instante para que nunca pierdas clientes ni ventas.
-            </p>
+        <!-- Compact Visual Status -->
+        <div class="w-full mb-6">
+          <div class="bg-cosmos-dark/60 border border-gray-850 rounded-lg p-3 flex items-center justify-between text-xs transition-colors group-hover:border-gray-800">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span class="font-bold text-white text-[11px]">Cluster Pegaso: Online</span>
+            </div>
+            <span class="text-gold-bright font-mono text-[10px] font-bold">99.99% Uptime</span>
           </div>
         </div>
 
-        <!-- Tarjeta 2: Ciberseguridad -->
-        <div class="animate-on-scroll glass-card p-5 rounded-xl border border-gray-800 transition-all hover:border-cosmos-blue/30 flex items-start gap-4 group">
-          <!-- Icono SVG Escudo -->
-          <div class="p-3 bg-cosmos-blue/15 rounded-lg text-cosmos-blue transition-colors group-hover:bg-cosmos-blue/25 shrink-0">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <div>
-            <h4 class="text-base font-heading font-semibold text-white mb-1 group-hover:text-cosmos-blue transition-colors">Fortaleza Digital <span class="italic text-gold-deep text-xs font-normal block sm:inline sm:ml-2">(Protección Blindada)</span></h4>
-            <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed">
-              Resguardamos tus datos y los de tus clientes con cifrado avanzado y verificación continua. La información confidencial de tu empresa estará 100% protegida contra accesos no autorizados.
-            </p>
-          </div>
-        </div>
+        <!-- Simple Visual Explanatory Diagram -->
+        <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.2" class="w-full h-12 text-gray-500 group-hover:text-emerald-450 transition-colors mb-6">
+          <!-- Server A -->
+          <rect x="10" y="5" width="55" height="22" rx="3" fill="currentColor" fill-opacity="0.05" />
+          <circle cx="20" cy="16" r="2" fill="currentColor" />
+          <line x1="28" y1="16" x2="55" y2="16" />
+          <text x="10" y="40" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Servidor Principal</text>
 
-        <!-- Tarjeta 3: SaaS Inteligente -->
-        <div class="animate-on-scroll glass-card p-5 rounded-xl border border-gray-800 transition-all hover:border-gold-deep/30 flex items-start gap-4 group">
-          <!-- Icono SVG Cerebro / IA -->
-          <div class="p-3 bg-gold-deep/10 rounded-lg text-gold-bright transition-colors group-hover:bg-gold-deep/20 shrink-0">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-            </svg>
-          </div>
-          <div>
-            <h4 class="text-base font-heading font-semibold text-white mb-1 group-hover:text-gold-bright transition-colors">SaaS e Inteligencia <span class="italic text-gold-deep text-xs font-normal block sm:inline sm:ml-2">(Automatización a Medida)</span></h4>
-            <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed">
-              Creamos software a la medida que automatiza tus procesos diarios y conecta Inteligencia Artificial para ayudarte a tomar mejores decisiones comerciales analizando tus datos en tiempo real.
-            </p>
-          </div>
-        </div>
+          <!-- Server B (Backup) -->
+          <rect x="135" y="5" width="55" height="22" rx="3" fill="currentColor" fill-opacity="0.05" />
+          <circle cx="145" cy="16" r="2" fill="currentColor" />
+          <line x1="153" y1="16" x2="180" y2="16" />
+          <text x="135" y="40" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Respaldo Activo</text>
 
-        <!-- Tarjeta 4: Infraestructura Nube -->
-        <div class="animate-on-scroll glass-card p-5 rounded-xl border border-gray-800 transition-all hover:border-cosmos-blue/30 flex items-start gap-4 group">
-          <!-- Icono SVG Nube -->
-          <div class="p-3 bg-cosmos-blue/15 rounded-lg text-cosmos-blue transition-colors group-hover:bg-cosmos-blue/25 shrink-0">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
-            </svg>
-          </div>
-          <div>
-            <h4 class="text-base font-heading font-semibold text-white mb-1 group-hover:text-cosmos-blue transition-colors">Ecosistema Cloud <span class="italic text-gold-deep text-xs font-normal block sm:inline sm:ml-2">(Crecimiento sin Límites)</span></h4>
-            <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed">
-              Tu plataforma corre sobre servidores en la nube de alta velocidad (AWS y GCP) que se adaptan y expanden automáticamente a medida que tu negocio recibe más visitas y clientes.
-            </p>
-          </div>
-        </div>
+          <!-- Connection line with arrow -->
+          <path d="M75 16 h50" stroke-dasharray="3 3" />
+          <path d="M102 12 l6 4-6 4" fill="currentColor" stroke="none" />
+        </svg>
 
-      </div>
-
-      <!-- Columna Derecha: Imagen del Diagrama Visual -->
-      <div class="lg:col-span-6 animate-on-scroll relative">
-        <div class="absolute -inset-1.5 bg-gradient-to-r from-cosmos-blue/20 to-gold-deep/20 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition duration-1000"></div>
-        <div class="glass-card p-2 rounded-2xl border border-gray-800 relative z-10 hover:border-cosmos-blue/30 transition-all duration-500">
-          <img 
-            src="/digital_ecosystem_diagram.png" 
-            alt="Esquema Visual de Ecosistema Digital Pegaso System" 
-            class="w-full h-auto rounded-xl shadow-2xl filter brightness-90 hover:brightness-100 transition-all duration-500"
-            loading="lazy"
-          />
+        <!-- Card Text -->
+        <div class="text-left relative z-10">
+          <h4 class="text-base font-heading font-semibold text-white mb-2 text-glow">Sistemas que Nunca se Caen</h4>
+          <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed">
+            Si un servidor principal falla, un sistema de respaldo entra en acción al instante. Su plataforma sigue activa las 24 horas del día, asegurando ventas continuas y cero interrupciones.
+          </p>
         </div>
       </div>
+      
+      <!-- Card 2: Ciberseguridad (lg:col-span-7) -->
+      <div class="animate-on-scroll lg:col-span-7 glass-card p-6 flex flex-col justify-between rounded-xl border border-gray-800 relative group overflow-hidden transition-all hover:border-cosmos-blue/30">
+        <!-- Inside Card Glow -->
+        <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-cosmos-blue/10 to-transparent pointer-events-none"></div>
 
+        <!-- Compact Visual Status -->
+        <div class="w-full mb-6 flex flex-wrap gap-2">
+          <span class="px-2.5 py-1 rounded bg-cosmos-dark/60 border border-gray-850 text-[10px] text-gray-400 font-mono transition-colors group-hover:border-gray-800">🔐 Cifrado: Activo</span>
+          <span class="px-2.5 py-1 rounded bg-cosmos-blue/15 border border-cosmos-blue/35 text-[10px] text-cosmos-blue font-mono font-bold">🛡️ Zero Trust: Activo</span>
+          <span class="px-2.5 py-1 rounded bg-cosmos-dark/60 border border-gray-850 text-[10px] text-gray-400 font-mono transition-colors group-hover:border-gray-800">🔍 Auditado</span>
+        </div>
+
+        <!-- Simple Visual Explanatory Diagram -->
+        <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.2" class="w-full h-12 text-gray-500 group-hover:text-cosmos-blue transition-colors mb-6">
+          <!-- Data Node -->
+          <circle cx="35" cy="20" r="12" fill="currentColor" fill-opacity="0.05" />
+          <path d="M31 18 h8 v6 h-8 z" />
+          <circle cx="35" cy="14" r="3" />
+          <text x="12" y="44" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Datos Protegidos</text>
+          
+          <!-- Firewall Barrier -->
+          <path d="M85 8 v30" stroke-dasharray="2 2" />
+          <text x="70" y="48" fill="currentColor" font-size="6" font-family="sans-serif">Muro de Seguridad</text>
+          
+          <!-- Shield -->
+          <path d="M140 16 c0-5 8-8 20-8 s20 3 20 8 c0 15-8 25-20 30 c-12-5-20-15-20-30 z" fill="currentColor" fill-opacity="0.05" />
+          <path d="M150 22 l6 6 l10-10" stroke-width="2" />
+          <text x="138" y="52" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Escudo de Red</text>
+
+          <!-- Arrows connecting -->
+          <path d="M52 20 h28 M90 20 h45" />
+        </svg>
+
+        <!-- Card Text -->
+        <div class="text-left relative z-10">
+          <h4 class="text-base font-heading font-semibold text-white mb-2 text-glow">Protección de Datos y Ciberseguridad</h4>
+          <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed">
+            Protegemos la información sensible de su empresa y de sus clientes contra accesos no autorizados. Implementamos encriptación avanzada y blindaje de red (Zero Trust) de nivel bancario.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Card 3: SaaS Inteligente (lg:col-span-7) -->
+      <div class="animate-on-scroll lg:col-span-7 glass-card p-6 flex flex-col justify-between rounded-xl border border-gray-800 relative group overflow-hidden transition-all hover:border-cosmos-blue/30">
+        <!-- Inside Card Glow -->
+        <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-cosmos-blue/10 to-transparent pointer-events-none"></div>
+
+        <!-- Compact Visual Status -->
+        <div class="w-full mb-6">
+          <div class="bg-cosmos-dark/60 border border-gray-850 rounded-lg p-3 flex items-center justify-between text-xs transition-colors group-hover:border-gray-800">
+            <span class="text-gray-400 font-mono text-[10px]">PegasoBI.query("ventas").integrate(IA)</span>
+            <span class="px-2 py-0.5 rounded bg-gold-deep/20 border border-gold-deep/30 text-[9px] text-gold-bright font-semibold">Ejecutar ✦</span>
+          </div>
+        </div>
+
+        <!-- Simple Visual Explanatory Diagram -->
+        <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.2" class="w-full h-12 text-gray-500 group-hover:text-gold-deep transition-colors mb-6">
+          <!-- Data Input -->
+          <rect x="10" y="8" width="45" height="20" rx="3" fill="currentColor" fill-opacity="0.05" />
+          <line x1="18" y1="18" x2="35" y2="18" stroke-width="2" />
+          <text x="10" y="42" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Datos Operativos</text>
+          
+          <!-- IA Processing Node -->
+          <circle cx="95" cy="18" r="10" stroke-dasharray="2 2" />
+          <!-- Small stars to represent AI spark -->
+          <path d="M93 16l2 2 2-2-2-2z M97 22l1 1 1-1-1-1z" fill="currentColor" stroke="none" />
+          <text x="80" y="42" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Inteligencia Artificial</text>
+
+          <!-- Output Dashboard -->
+          <rect x="145" y="8" width="45" height="22" rx="3" fill="currentColor" fill-opacity="0.05" stroke-width="1.5" />
+          <path d="M150 24 l10-8 l6 4 l12-10" stroke-width="1.5" />
+          <text x="142" y="42" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Gráficos y Métricas</text>
+          
+          <!-- Connection arrows -->
+          <path d="M60 18 h20 M110 18 h30" />
+        </svg>
+
+        <!-- Card Text -->
+        <div class="text-left relative z-10">
+          <h4 class="text-base font-heading font-semibold text-white mb-2 text-glow">Software Inteligente y Automatización</h4>
+          <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed">
+            Desarrollamos aplicaciones a la medida que simplifican las tareas diarias de su empresa. Integramos Inteligencia Artificial y análisis de datos en tiempo real para optimizar sus operaciones.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Card 4: Ecosistema Tecnológico (lg:col-span-5) -->
+      <div class="animate-on-scroll lg:col-span-5 glass-card p-6 flex flex-col justify-between rounded-xl border border-gray-800 relative group overflow-hidden transition-all hover:border-gold-deep/30">
+        <!-- Inside Card Glow -->
+        <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-gold-deep/5 to-transparent pointer-events-none"></div>
+
+        <!-- Compact Visual Status -->
+        <div class="w-full mb-6">
+          <div class="bg-cosmos-dark/60 border border-gray-850 rounded-lg p-3 flex items-center justify-between text-[10px] font-mono text-gray-400 transition-colors group-hover:border-gray-800">
+            <span class="text-white">React/Astro</span>
+            <span class="text-gray-500">➔</span>
+            <span class="text-white">APIs / DB</span>
+            <span class="text-gray-500">➔</span>
+            <span class="text-white">AWS / GCP</span>
+          </div>
+        </div>
+
+        <!-- Simple Visual Explanatory Diagram -->
+        <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.2" class="w-full h-12 text-gray-500 group-hover:text-gold-deep transition-colors mb-6">
+          <!-- Device -->
+          <rect x="15" y="8" width="22" height="28" rx="2" fill="currentColor" fill-opacity="0.05" />
+          <line x1="26" y1="32" x2="26" y2="32" stroke-width="2" />
+          <text x="12" y="48" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Diseño Visual</text>
+
+          <!-- Lightning / Speed Arrow -->
+          <path d="M60 22 l15 0-5 10 15-12-15 0 5-10z" fill="currentColor" stroke="none" />
+          <text x="50" y="46" fill="currentColor" font-size="6" font-family="sans-serif">Velocidad Máxima</text>
+          
+          <!-- Cloud Database -->
+          <path d="M140 28 c-3-2-3-8 1-10 c1-4 6-6 10-4 c2-2 7-2 9 1 c3-1 7 2 6 6 c2 1 2 6-1 7 z" fill="currentColor" fill-opacity="0.05" />
+          <text x="132" y="48" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Servidor en la Nube</text>
+          
+          <!-- Connections -->
+          <path d="M42 22 h12 M112 22 h23" stroke-dasharray="2 2" />
+        </svg>
+
+        <!-- Card Text -->
+        <div class="text-left relative z-10">
+          <h4 class="text-base font-heading font-semibold text-white mb-2 text-glow">Ecosistema Tecnológico de Alta Velocidad</h4>
+          <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed">
+            Conectamos de forma fluida el diseño visual rápido (Frontend) con bases de datos y servidores estables en la nube global. Esto garantiza que su web cargue de inmediato.
+          </p>
+        </div>
+      </div>
+      
     </div>
   </div>
 </section>
