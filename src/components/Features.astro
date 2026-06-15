@@ -25,36 +25,27 @@
       <div class="animate-on-scroll lg:col-span-5 glass-card p-6 flex flex-col justify-between rounded-xl border border-gray-800 relative group overflow-hidden transition-all hover:border-gold-deep/30">
         <!-- Inside Card Glow -->
         <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-gold-deep/5 to-transparent pointer-events-none"></div>
-        
-        <!-- Compact Visual Status -->
-        <div class="w-full mb-6">
-          <div class="bg-cosmos-dark/60 border border-gray-850 rounded-lg p-3 flex items-center justify-between text-xs transition-colors group-hover:border-gray-800">
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span class="font-bold text-white text-[11px]">Cluster Pegaso: Online</span>
-            </div>
-            <span class="text-gold-bright font-mono text-[10px] font-bold">99.99% Uptime</span>
-          </div>
+
+        <!-- Diagrama SVG Explicativo (Grande y Centrado) -->
+        <div class="w-full flex items-center justify-center py-6 mb-4">
+          <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.2" class="w-full max-w-[280px] h-20 sm:h-24 text-gray-500 group-hover:text-emerald-400 transition-colors">
+            <!-- Server A -->
+            <rect x="10" y="5" width="55" height="22" rx="3" fill="currentColor" fill-opacity="0.05" />
+            <circle cx="20" cy="16" r="2" fill="currentColor" />
+            <line x1="28" y1="16" x2="55" y2="16" />
+            <text x="10" y="40" fill="currentColor" font-size="7" font-family="sans-serif" class="font-semibold tracking-wide">Servidor Principal</text>
+
+            <!-- Server B (Backup) -->
+            <rect x="135" y="5" width="55" height="22" rx="3" fill="currentColor" fill-opacity="0.05" />
+            <circle cx="145" cy="16" r="2" fill="currentColor" />
+            <line x1="153" y1="16" x2="180" y2="16" />
+            <text x="135" y="40" fill="currentColor" font-size="7" font-family="sans-serif" class="font-semibold tracking-wide">Respaldo Activo</text>
+
+            <!-- Connection line with arrow -->
+            <path d="M75 16 h50" stroke-dasharray="3 3" />
+            <path d="M102 12 l6 4-6 4" fill="currentColor" stroke="none" />
+          </svg>
         </div>
-
-        <!-- Simple Visual Explanatory Diagram -->
-        <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.2" class="w-full h-12 text-gray-500 group-hover:text-emerald-450 transition-colors mb-6">
-          <!-- Server A -->
-          <rect x="10" y="5" width="55" height="22" rx="3" fill="currentColor" fill-opacity="0.05" />
-          <circle cx="20" cy="16" r="2" fill="currentColor" />
-          <line x1="28" y1="16" x2="55" y2="16" />
-          <text x="10" y="40" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Servidor Principal</text>
-
-          <!-- Server B (Backup) -->
-          <rect x="135" y="5" width="55" height="22" rx="3" fill="currentColor" fill-opacity="0.05" />
-          <circle cx="145" cy="16" r="2" fill="currentColor" />
-          <line x1="153" y1="16" x2="180" y2="16" />
-          <text x="135" y="40" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Respaldo Activo</text>
-
-          <!-- Connection line with arrow -->
-          <path d="M75 16 h50" stroke-dasharray="3 3" />
-          <path d="M102 12 l6 4-6 4" fill="currentColor" stroke="none" />
-        </svg>
 
         <!-- Card Text -->
         <div class="text-left relative z-10">
@@ -70,33 +61,28 @@
         <!-- Inside Card Glow -->
         <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-cosmos-blue/10 to-transparent pointer-events-none"></div>
 
-        <!-- Compact Visual Status -->
-        <div class="w-full mb-6 flex flex-wrap gap-2">
-          <span class="px-2.5 py-1 rounded bg-cosmos-dark/60 border border-gray-850 text-[10px] text-gray-400 font-mono transition-colors group-hover:border-gray-800">🔐 Cifrado: Activo</span>
-          <span class="px-2.5 py-1 rounded bg-cosmos-blue/15 border border-cosmos-blue/35 text-[10px] text-cosmos-blue font-mono font-bold">🛡️ Zero Trust: Activo</span>
-          <span class="px-2.5 py-1 rounded bg-cosmos-dark/60 border border-gray-850 text-[10px] text-gray-400 font-mono transition-colors group-hover:border-gray-800">🔍 Auditado</span>
+        <!-- Diagrama SVG Explicativo (Grande y Centrado) -->
+        <div class="w-full flex items-center justify-center py-6 mb-4">
+          <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.2" class="w-full max-w-[320px] h-20 sm:h-24 text-gray-500 group-hover:text-cosmos-blue transition-colors">
+            <!-- Data Node -->
+            <circle cx="35" cy="20" r="12" fill="currentColor" fill-opacity="0.05" />
+            <path d="M31 18 h8 v6 h-8 z" />
+            <circle cx="35" cy="14" r="3" />
+            <text x="12" y="44" fill="currentColor" font-size="7" font-family="sans-serif" class="font-semibold tracking-wide">Datos Protegidos</text>
+            
+            <!-- Firewall Barrier -->
+            <path d="M85 8 v30" stroke-dasharray="2 2" />
+            <text x="70" y="48" fill="currentColor" font-size="6" font-family="sans-serif">Muro de Seguridad</text>
+            
+            <!-- Shield -->
+            <path d="M140 16 c0-5 8-8 20-8 s20 3 20 8 c0 15-8 25-20 30 c-12-5-20-15-20-30 z" fill="currentColor" fill-opacity="0.05" />
+            <path d="M150 22 l6 6 l10-10" stroke-width="2" />
+            <text x="138" y="52" fill="currentColor" font-size="7" font-family="sans-serif" class="font-semibold tracking-wide">Escudo de Red</text>
+
+            <!-- Arrows connecting -->
+            <path d="M52 20 h28 M90 20 h45" />
+          </svg>
         </div>
-
-        <!-- Simple Visual Explanatory Diagram -->
-        <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.2" class="w-full h-12 text-gray-500 group-hover:text-cosmos-blue transition-colors mb-6">
-          <!-- Data Node -->
-          <circle cx="35" cy="20" r="12" fill="currentColor" fill-opacity="0.05" />
-          <path d="M31 18 h8 v6 h-8 z" />
-          <circle cx="35" cy="14" r="3" />
-          <text x="12" y="44" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Datos Protegidos</text>
-          
-          <!-- Firewall Barrier -->
-          <path d="M85 8 v30" stroke-dasharray="2 2" />
-          <text x="70" y="48" fill="currentColor" font-size="6" font-family="sans-serif">Muro de Seguridad</text>
-          
-          <!-- Shield -->
-          <path d="M140 16 c0-5 8-8 20-8 s20 3 20 8 c0 15-8 25-20 30 c-12-5-20-15-20-30 z" fill="currentColor" fill-opacity="0.05" />
-          <path d="M150 22 l6 6 l10-10" stroke-width="2" />
-          <text x="138" y="52" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Escudo de Red</text>
-
-          <!-- Arrows connecting -->
-          <path d="M52 20 h28 M90 20 h45" />
-        </svg>
 
         <!-- Card Text -->
         <div class="text-left relative z-10">
@@ -112,35 +98,29 @@
         <!-- Inside Card Glow -->
         <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-cosmos-blue/10 to-transparent pointer-events-none"></div>
 
-        <!-- Compact Visual Status -->
-        <div class="w-full mb-6">
-          <div class="bg-cosmos-dark/60 border border-gray-850 rounded-lg p-3 flex items-center justify-between text-xs transition-colors group-hover:border-gray-800">
-            <span class="text-gray-400 font-mono text-[10px]">PegasoBI.query("ventas").integrate(IA)</span>
-            <span class="px-2 py-0.5 rounded bg-gold-deep/20 border border-gold-deep/30 text-[9px] text-gold-bright font-semibold">Ejecutar ✦</span>
-          </div>
+        <!-- Diagrama SVG Explicativo (Grande y Centrado) -->
+        <div class="w-full flex items-center justify-center py-6 mb-4">
+          <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.2" class="w-full max-w-[320px] h-20 sm:h-24 text-gray-500 group-hover:text-amber-400 transition-colors">
+            <!-- Data Input -->
+            <rect x="10" y="8" width="45" height="20" rx="3" fill="currentColor" fill-opacity="0.05" />
+            <line x1="18" y1="18" x2="35" y2="18" stroke-width="2" />
+            <text x="10" y="42" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Datos Operativos</text>
+            
+            <!-- IA Processing Node -->
+            <circle cx="95" cy="18" r="10" stroke-dasharray="2 2" />
+            <!-- Small stars to represent AI spark -->
+            <path d="M93 16l2 2 2-2-2-2z M97 22l1 1 1-1-1-1z" fill="currentColor" stroke="none" />
+            <text x="80" y="42" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Inteligencia Artificial</text>
+
+            <!-- Output Dashboard -->
+            <rect x="145" y="8" width="45" height="22" rx="3" fill="currentColor" fill-opacity="0.05" stroke-width="1.5" />
+            <path d="M150 24 l10-8 l6 4 l12-10" stroke-width="1.5" />
+            <text x="142" y="42" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Gráficos y Métricas</text>
+            
+            <!-- Connection arrows -->
+            <path d="M60 18 h20 M110 18 h30" />
+          </svg>
         </div>
-
-        <!-- Simple Visual Explanatory Diagram -->
-        <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.2" class="w-full h-12 text-gray-500 group-hover:text-gold-deep transition-colors mb-6">
-          <!-- Data Input -->
-          <rect x="10" y="8" width="45" height="20" rx="3" fill="currentColor" fill-opacity="0.05" />
-          <line x1="18" y1="18" x2="35" y2="18" stroke-width="2" />
-          <text x="10" y="42" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Datos Operativos</text>
-          
-          <!-- IA Processing Node -->
-          <circle cx="95" cy="18" r="10" stroke-dasharray="2 2" />
-          <!-- Small stars to represent AI spark -->
-          <path d="M93 16l2 2 2-2-2-2z M97 22l1 1 1-1-1-1z" fill="currentColor" stroke="none" />
-          <text x="80" y="42" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Inteligencia Artificial</text>
-
-          <!-- Output Dashboard -->
-          <rect x="145" y="8" width="45" height="22" rx="3" fill="currentColor" fill-opacity="0.05" stroke-width="1.5" />
-          <path d="M150 24 l10-8 l6 4 l12-10" stroke-width="1.5" />
-          <text x="142" y="42" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Gráficos y Métricas</text>
-          
-          <!-- Connection arrows -->
-          <path d="M60 18 h20 M110 18 h30" />
-        </svg>
 
         <!-- Card Text -->
         <div class="text-left relative z-10">
@@ -156,35 +136,26 @@
         <!-- Inside Card Glow -->
         <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-gold-deep/5 to-transparent pointer-events-none"></div>
 
-        <!-- Compact Visual Status -->
-        <div class="w-full mb-6">
-          <div class="bg-cosmos-dark/60 border border-gray-850 rounded-lg p-3 flex items-center justify-between text-[10px] font-mono text-gray-400 transition-colors group-hover:border-gray-800">
-            <span class="text-white">React/Astro</span>
-            <span class="text-gray-500">➔</span>
-            <span class="text-white">APIs / DB</span>
-            <span class="text-gray-500">➔</span>
-            <span class="text-white">AWS / GCP</span>
-          </div>
+        <!-- Diagrama SVG Explicativo (Grande y Centrado) -->
+        <div class="w-full flex items-center justify-center py-6 mb-4">
+          <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.2" class="w-full max-w-[280px] h-20 sm:h-24 text-gray-500 group-hover:text-indigo-400 transition-colors">
+            <!-- Device -->
+            <rect x="15" y="8" width="22" height="28" rx="2" fill="currentColor" fill-opacity="0.05" />
+            <line x1="26" y1="32" x2="26" y2="32" stroke-width="2" />
+            <text x="12" y="48" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Diseño Visual</text>
+
+            <!-- Lightning / Speed Arrow -->
+            <path d="M60 22 l15 0-5 10 15-12-15 0 5-10z" fill="currentColor" stroke="none" />
+            <text x="50" y="46" fill="currentColor" font-size="6" font-family="sans-serif">Velocidad Máxima</text>
+            
+            <!-- Cloud Database -->
+            <path d="M140 28 c-3-2-3-8 1-10 c1-4 6-6 10-4 c2-2 7-2 9 1 c3-1 7 2 6 6 c2 1 2 6-1 7 z" fill="currentColor" fill-opacity="0.05" />
+            <text x="132" y="48" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Servidor en la Nube</text>
+            
+            <!-- Connections -->
+            <path d="M42 22 h12 M112 22 h23" stroke-dasharray="2 2" />
+          </svg>
         </div>
-
-        <!-- Simple Visual Explanatory Diagram -->
-        <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.2" class="w-full h-12 text-gray-500 group-hover:text-gold-deep transition-colors mb-6">
-          <!-- Device -->
-          <rect x="15" y="8" width="22" height="28" rx="2" fill="currentColor" fill-opacity="0.05" />
-          <line x1="26" y1="32" x2="26" y2="32" stroke-width="2" />
-          <text x="12" y="48" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Diseño Visual</text>
-
-          <!-- Lightning / Speed Arrow -->
-          <path d="M60 22 l15 0-5 10 15-12-15 0 5-10z" fill="currentColor" stroke="none" />
-          <text x="50" y="46" fill="currentColor" font-size="6" font-family="sans-serif">Velocidad Máxima</text>
-          
-          <!-- Cloud Database -->
-          <path d="M140 28 c-3-2-3-8 1-10 c1-4 6-6 10-4 c2-2 7-2 9 1 c3-1 7 2 6 6 c2 1 2 6-1 7 z" fill="currentColor" fill-opacity="0.05" />
-          <text x="132" y="48" fill="currentColor" font-size="7" font-family="sans-serif" class="font-medium">Servidor en la Nube</text>
-          
-          <!-- Connections -->
-          <path d="M42 22 h12 M112 22 h23" stroke-dasharray="2 2" />
-        </svg>
 
         <!-- Card Text -->
         <div class="text-left relative z-10">
