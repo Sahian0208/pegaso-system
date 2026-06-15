@@ -4,11 +4,8 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
       <div>
-        <a href="/" class="flex items-center justify-center md:justify-start gap-2 mb-4 group">
-          <div class="w-8 h-8 rounded-full border border-gold-deep flex items-center justify-center group-hover:shadow-[0_0_10px_rgba(212,175,55,0.6)]">
-            <span class="text-gold-bright font-montserrat font-bold text-sm">PS</span>
-          </div>
-          <span class="text-lg font-black tracking-wider font-montserrat text-white uppercase">PEGASO<span class="text-gold-bright font-light">SYSTEM</span></span>
+        <a href="/" class="flex items-center justify-center md:justify-start mb-6 group relative h-16 w-48 mx-auto md:mx-0">
+          <img src="/logo-pegaso.png" alt="Pegaso System Logo" class="absolute left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 top-1/2 -translate-y-1/2 h-16 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] group-hover:drop-shadow-[0_0_18px_rgba(255,255,255,0.6)] transition-all duration-300" />
         </a>
         <p class="text-gray-400 text-sm leading-relaxed mb-6 font-montserrat font-light">
           Desarrollo de software comercial y aplicaciones web que elevan el cosmos de tu negocio con tecnología indestructible y veloz.
@@ -27,9 +24,13 @@
 
       <div>
         <h3 class="text-white font-bold font-heading text-lg mb-4 text-glow">Contacto Corporativo</h3>
-        <form class="space-y-4">
-          <input type="email" placeholder="Tu correo electrónico" class="w-full bg-cosmos-dark/80 border border-gray-700 rounded px-4 py-2 text-white focus:outline-none focus:border-gold-bright focus:ring-1 focus:ring-gold-bright transition-all" />
-          <button type="submit" class="w-full bg-gold-deep hover:bg-gold-bright text-cosmos-dark font-bold py-2 px-4 rounded transition-colors shadow-[0_0_10px_rgba(212,175,55,0.3)] hover:shadow-[0_0_15px_rgba(241,196,15,0.5)]">
+        <form id="whatsapp-contact-form" class="space-y-4">
+          <input type="email" id="whatsapp-email" placeholder="Tu correo electrónico" required class="w-full bg-cosmos-dark/80 border border-gray-700 rounded px-4 py-2.5 text-white focus:outline-none focus:border-gold-bright focus:ring-1 focus:ring-gold-bright transition-all" />
+          <textarea id="whatsapp-message" placeholder="¿En qué podemos ayudarte?" required rows="3" class="w-full bg-cosmos-dark/80 border border-gray-700 rounded px-4 py-2.5 text-white focus:outline-none focus:border-gold-bright focus:ring-1 focus:ring-gold-bright transition-all resize-none"></textarea>
+          <button type="submit" class="w-full bg-gold-deep hover:bg-gold-bright text-cosmos-dark font-bold py-2.5 px-4 rounded transition-colors shadow-[0_0_10px_rgba(212,175,55,0.3)] hover:shadow-[0_0_15px_rgba(241,196,15,0.5)] flex items-center justify-center gap-2 cursor-pointer">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.449 5.4 0 9.794-4.392 9.797-9.793.002-2.617-1.015-5.078-2.862-6.928C16.36 1.953 13.9.936 11.895.936c-5.4 0-9.8 4.394-9.803 9.797-.001 1.905.5 3.758 1.45 5.367L2.5 22.148l6.147-1.614zM16.91 14.887c-.287-.143-1.697-.837-1.959-.933-.263-.097-.455-.145-.647.143-.19.288-.739.933-.906 1.123-.167.19-.335.21-.622.068-2.822-1.41-4.086-2.584-4.808-3.824-.188-.324-.019-.501.124-.643.13-.127.287-.335.43-.502.144-.167.191-.287.287-.478.096-.19.048-.36-.024-.503-.072-.143-.647-1.56-.887-2.136-.233-.56-.47-.482-.647-.49-.168-.008-.36-.01-.55-.01-.19 0-.503.07-.766.36-.263.288-1.006.984-1.006 2.402 0 1.417 1.03 2.787 1.173 2.977.143.19 2.027 3.1 4.91 4.34.686.295 1.22.47 1.636.602.69.219 1.317.188 1.815.114.553-.083 1.697-.693 1.937-1.362.24-.669.24-1.243.167-1.362-.072-.119-.263-.167-.55-.309z"/>
+            </svg>
             Enviar Mensaje
           </button>
         </form>
@@ -46,3 +47,28 @@
     </div>
   </div>
 </footer>
+
+<script>
+  // Handle contact form redirection to WhatsApp
+  const contactForm = document.getElementById('whatsapp-contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const emailInput = document.getElementById('whatsapp-email') as HTMLInputElement;
+      const messageInput = document.getElementById('whatsapp-message') as HTMLTextAreaElement;
+      
+      if (emailInput && messageInput) {
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+        
+        // Prefilled message template
+        const textTemplate = `Hola Pegaso System!\n\nMi correo electrónico: ${email}\n\nConsulta:\n${message}`;
+        const encodedText = encodeURIComponent(textTemplate);
+        
+        // Open WhatsApp in a new tab
+        const whatsappUrl = `https://wa.me/59179786916?text=${encodedText}`;
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      }
+    });
+  }
+</script>
