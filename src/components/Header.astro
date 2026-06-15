@@ -1,11 +1,11 @@
 ---
 ---
-<header class="fixed top-0 w-full z-50 transition-all duration-300 bg-cosmos-dark/80 backdrop-blur-md border-b border-gray-800" id="navbar">
+<header class="fixed top-0 w-full z-50 bg-cosmos-dark/80 backdrop-blur-md border-b border-gray-800" id="navbar">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center py-4 md:py-5 transition-all duration-300" id="navbar-inner">
+    <div class="flex justify-between items-center py-4 md:py-5" id="navbar-inner">
       <div class="flex items-center">
         <a href="/" class="flex items-center group relative h-14 w-32 sm:w-40 md:w-48">
-          <img id="nav-logo" src="/logo-pegaso.png" alt="Pegaso System Logo" class="absolute left-0 top-1/2 -translate-y-1/2 h-32 sm:h-38 md:h-44 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] group-hover:drop-shadow-[0_0_18px_rgba(255,255,255,0.6)] transition-all duration-300" />
+          <img id="nav-logo" src="/logo-pegaso.png" alt="Pegaso System Logo" class="absolute left-0 top-1/2 -translate-y-1/2 h-24 sm:h-28 md:h-32 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] group-hover:drop-shadow-[0_0_18px_rgba(255,255,255,0.6)]" />
         </a>
       </div>
       <nav class="hidden md:flex space-x-8">
@@ -14,7 +14,7 @@
         <a href="#contacto" class="text-white hover:text-gold-bright transition-colors font-medium text-sm uppercase tracking-widest text-glow hover:scale-105 transform">Contacto</a>
       </nav>
       <div class="md:hidden">
-        <button class="text-white hover:text-gold-bright focus:outline-none">
+        <button id="mobile-menu-open" class="text-white hover:text-gold-bright focus:outline-none cursor-pointer">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -24,27 +24,108 @@
   </div>
 </header>
 
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[60] bg-cosmos-dark/95 backdrop-blur-xl flex flex-col justify-center items-center space-y-8 transition-transform duration-300 translate-x-full md:hidden">
+  <!-- Close Button -->
+  <button id="mobile-menu-close" class="absolute top-6 right-6 text-white hover:text-gold-bright focus:outline-none cursor-pointer">
+    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+  
+  <a href="#inicio" class="mobile-nav-link text-2xl text-white hover:text-gold-bright font-medium tracking-widest uppercase transition-colors">Inicio</a>
+  <a href="#servicios" class="mobile-nav-link text-2xl text-white hover:text-gold-bright font-medium tracking-widest uppercase transition-colors">Servicios</a>
+  <a href="#tecnologia" class="mobile-nav-link text-2xl text-white hover:text-gold-bright font-medium tracking-widest uppercase transition-colors">Tecnología</a>
+  <a href="#paquetes" class="mobile-nav-link text-2xl text-white hover:text-gold-bright font-medium tracking-widest uppercase transition-colors">Planes</a>
+  <a href="#equipo" class="mobile-nav-link text-2xl text-white hover:text-gold-bright font-medium tracking-widest uppercase transition-colors">Equipo</a>
+  <a href="#contacto" class="mobile-nav-link text-2xl text-white hover:text-gold-bright font-medium tracking-widest uppercase transition-colors">Contacto</a>
+</div>
+
+<style>
+  /* Base state transitions for hardware acceleration */
+  #navbar {
+    transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  }
+  #navbar-inner {
+    transition: padding 0.4s ease;
+  }
+  #nav-logo {
+    transition: height 0.4s ease, filter 0.4s ease;
+  }
+
+  /* Scrolled glass state: transitions to a more transparent background */
+  #navbar.scrolled {
+    background-color: rgba(3, 7, 18, 0.5) !important;
+    border-color: rgba(31, 41, 55, 0.4) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  #navbar.scrolled #navbar-inner {
+    padding-top: 0.5rem;   /* py-2 */
+    padding-bottom: 0.5rem; /* py-2 */
+  }
+
+  #navbar.scrolled #nav-logo {
+    height: 5rem; /* 80px (equiv. to h-20) */
+  }
+  @media (min-width: 640px) {
+    #navbar.scrolled #nav-logo {
+      height: 6rem; /* 96px (equiv. to h-24) */
+    }
+  }
+  @media (min-width: 768px) {
+    #navbar.scrolled #nav-logo {
+      height: 7rem; /* 112px (equiv. to h-28) */
+    }
+  }
+</style>
+
 <script>
-  window.addEventListener('scroll', () => {
+  // Navbar scroll check function
+  const checkScroll = () => {
     const navbar = document.getElementById('navbar');
-    const navbarInner = document.getElementById('navbar-inner');
-    const logo = document.getElementById('nav-logo');
-    if (window.scrollY > 20) {
-      navbar?.classList.add('glass-card');
-      navbarInner?.classList.add('py-2', 'md:py-3');
-      navbarInner?.classList.remove('py-4', 'md:py-5');
-      if (logo) {
-        logo.classList.remove('h-32', 'sm:h-38', 'md:h-44');
-        logo.classList.add('h-22', 'sm:h-26', 'md:h-30');
-      }
-    } else {
-      navbar?.classList.remove('glass-card');
-      navbarInner?.classList.remove('py-2', 'md:py-3');
-      navbarInner?.classList.add('py-4', 'md:py-5');
-      if (logo) {
-        logo.classList.remove('h-22', 'sm:h-26', 'md:h-30');
-        logo.classList.add('h-32', 'sm:h-38', 'md:h-44');
+    if (navbar) {
+      if (window.scrollY > 10) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
       }
     }
-  });
+  };
+
+  // Bind scroll event
+  window.addEventListener('scroll', checkScroll);
+
+  // Execute immediately to catch correct scroll state on page load/refresh
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', checkScroll);
+  } else {
+    checkScroll();
+  }
+
+  // Mobile menu open/close logic
+  const openBtn = document.getElementById('mobile-menu-open');
+  const closeBtn = document.getElementById('mobile-menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+  if (openBtn && closeBtn && mobileMenu) {
+    const openMenu = () => {
+      mobileMenu.classList.remove('translate-x-full');
+      document.body.classList.add('overflow-hidden');
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.add('translate-x-full');
+      document.body.classList.remove('overflow-hidden');
+    };
+
+    openBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+
+    // Auto-close menu drawer when selecting a section
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  }
 </script>
