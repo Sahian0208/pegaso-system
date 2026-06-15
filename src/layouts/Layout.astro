@@ -10,7 +10,7 @@ const { title, description = "Pegaso System - Desarrollo de Software Comercial y
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth js">
+<html lang="es" class="js">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -23,11 +23,34 @@ const { title, description = "Pegaso System - Desarrollo de Software Comercial y
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 		
-		<!-- GSAP and ScrollTrigger CDN -->
+		<!-- GSAP, ScrollTrigger and ScrollToPlugin CDN -->
 		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 		
 		<title>{title}</title>
+		
+		<style>
+			/* Prevenir parpadeo de carga (FOUC) en elementos del Hero animado */
+			.js #inicio h2,
+			.js #inicio h1 span,
+			.js #hero-desc,
+			.js #hero-buttons {
+				opacity: 0;
+			}
+		</style>
+		
+		<noscript>
+			<style>
+				#inicio h2,
+				#inicio h1 span,
+				#hero-desc,
+				#hero-buttons,
+				.animate-on-scroll {
+					opacity: 1 !important;
+				}
+			</style>
+		</noscript>
 	</head>
 	<body class="bg-cosmos-dark text-white min-h-screen relative font-sans overflow-x-hidden antialiased">
 		<div class="fixed inset-0 bg-stars -z-20"></div>
@@ -48,10 +71,10 @@ const { title, description = "Pegaso System - Desarrollo de Software Comercial y
 		
 		<script>
 			// Animaciones avanzadas y fluidas con GSAP
-			document.addEventListener("DOMContentLoaded", () => {
-				// 1. Registrar el plugin ScrollTrigger
+			const initGSAP = () => {
+				// 1. Registrar el plugin ScrollTrigger y ScrollToPlugin
 				// @ts-ignore
-				gsap.registerPlugin(ScrollTrigger);
+				gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 				// 2. Prevenir parpadeo inicial (FOUC): mostrar elementos controlados por JS e inicializar opacidades de carga
 				// @ts-ignore
@@ -92,6 +115,29 @@ const { title, description = "Pegaso System - Desarrollo de Software Comercial y
 						end: 'bottom top',
 						scrub: true
 					}
+				});
+
+				// 5b. Desplazamiento suave global de enlaces locales para evitar lags (Intercepción de clicks)
+				const hashLinks = document.querySelectorAll('a[href^="#"]');
+				hashLinks.forEach(link => {
+					link.addEventListener('click', (e) => {
+						const targetId = link.getAttribute('href');
+						if (!targetId || targetId === '#') return;
+						const targetElement = document.querySelector(targetId);
+						if (targetElement) {
+							e.preventDefault();
+							const navbar = document.getElementById('navbar');
+							const offset = navbar ? navbar.offsetHeight : 0;
+							
+							// @ts-ignore
+							gsap.to(window, {
+								duration: 0.9,
+								scrollTo: { y: targetElement, offsetY: offset },
+								ease: 'power2.out',
+								overwrite: 'auto'
+							});
+						}
+					});
 				});
 
 				// 6. Títulos de secciones con revelado progresivo (Excluyendo Hero para evitar conflictos de animación)
@@ -242,7 +288,14 @@ const { title, description = "Pegaso System - Desarrollo de Software Comercial y
 						}
 					});
 				}
-			});
+			};
+
+			// Inicialización robusta para evitar retrasos de carga
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", initGSAP);
+			} else {
+				initGSAP();
+			}
 		</script>
 	</body>
 </html>
