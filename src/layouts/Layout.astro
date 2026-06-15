@@ -1,23 +1,252 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Pegaso System - Desarrollo de Software Comercial y Soluciones Web Corporativas de Alto Rendimiento." } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es" class="scroll-smooth js">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+		
+		<!-- GSAP and ScrollTrigger CDN -->
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+		
+		<title>{title}</title>
 	</head>
-	<body>
+	<body class="bg-cosmos-dark text-white min-h-screen relative font-sans overflow-x-hidden antialiased">
+		<div class="fixed inset-0 bg-stars -z-20"></div>
+		
+		<!-- Shooting Stars Overlay -->
+		<div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+			<div class="shooting-star" style="top: 10%; left: -10%; animation-delay: 0s;"></div>
+			<div class="shooting-star" style="top: 30%; left: -20%; animation-delay: 2s; opacity: 0.6;"></div>
+			<div class="shooting-star" style="top: 50%; left: -5%; animation-delay: 1.5s; opacity: 0.8;"></div>
+			<div class="shooting-star" style="top: 70%; left: -15%; animation-delay: 4s;"></div>
+			<div class="shooting-star" style="top: -10%; left: 40%; animation-delay: 3s; opacity: 0.7;"></div>
+			<div class="shooting-star" style="top: -5%; left: 80%; animation-delay: 1s;"></div>
+		</div>
+		
+		<div class="fixed inset-0 bg-gradient-to-b from-transparent to-cosmos-dark/90 -z-10"></div>
+		
 		<slot />
+		
+		<script>
+			// Animaciones avanzadas y fluidas con GSAP
+			document.addEventListener("DOMContentLoaded", () => {
+				// 1. Registrar el plugin ScrollTrigger
+				// @ts-ignore
+				gsap.registerPlugin(ScrollTrigger);
+
+				// 2. Prevenir parpadeo inicial (FOUC): mostrar elementos controlados por JS e inicializar opacidades de carga
+				// @ts-ignore
+				gsap.set('.animate-on-scroll', { opacity: 1 });
+				// @ts-ignore
+				gsap.set(['#inicio h2', '#inicio h1 span', '#hero-desc', '#hero-buttons'], { opacity: 0 });
+
+				// 3. Efecto de luz Spotlight en las tarjetas Glass (Ligero e interactivo)
+				const cards = document.querySelectorAll('.glass-card');
+				cards.forEach(card => {
+					const htmlCard = card as HTMLElement;
+					htmlCard.addEventListener('mousemove', e => {
+						const rect = htmlCard.getBoundingClientRect();
+						const x = e.clientX - rect.left;
+						const y = e.clientY - rect.top;
+						htmlCard.style.setProperty('--mouse-x', `${x}px`);
+						htmlCard.style.setProperty('--mouse-y', `${y}px`);
+					});
+				});
+
+				// 4. Animación del Hero en la carga inicial (Flujo secuencial correcto)
+				// @ts-ignore
+				const heroTimeline = gsap.timeline();
+				heroTimeline
+					.fromTo('#inicio h2', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' })
+					.fromTo('#inicio h1 span', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out' }, '-=0.3')
+					.fromTo('#hero-desc', { opacity: 0, y: 25 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.4')
+					.fromTo('#hero-buttons', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3');
+
+				// 5. Efecto Parallax en el contenido del Hero (Vinculado al scroll, fluido a 60 FPS)
+				// @ts-ignore
+				gsap.to('#inicio .text-center', {
+					yPercent: 15,
+					ease: 'none',
+					scrollTrigger: {
+						trigger: '#inicio',
+						start: 'top top',
+						end: 'bottom top',
+						scrub: true
+					}
+				});
+
+				// 6. Títulos de secciones con revelado progresivo (Excluyendo Hero para evitar conflictos de animación)
+				const sectionHeaders = document.querySelectorAll('section:not(#inicio) .text-center h2, section:not(#inicio) .text-center h3, section:not(#inicio) .text-center div.w-16');
+				sectionHeaders.forEach(header => {
+					// @ts-ignore
+					gsap.from(header, {
+						opacity: 0,
+						y: 30,
+						duration: 1,
+						ease: 'power3.out',
+						scrollTrigger: {
+							trigger: header,
+							start: 'top 85%',
+							toggleActions: 'play none none none'
+						}
+					});
+				});
+
+				// 7. Sección de Servicios (Entradas asimétricas / Secuenciales)
+				const serviceRows = document.querySelectorAll('#servicios .space-y-32 > div');
+				// @ts-ignore
+				const mm = gsap.matchMedia();
+
+				// Móvil: Animación secuencial (Título/Marca de agua primero, luego Tarjeta)
+				mm.add("(max-width: 767px)", () => {
+					serviceRows.forEach(row => {
+						const card = row.querySelector('.glass-card');
+						const textLabel = row.querySelector('.select-none');
+						
+						// @ts-ignore
+						const tl = gsap.timeline({
+							scrollTrigger: {
+								trigger: row,
+								start: 'top 85%',
+								toggleActions: 'play none none none'
+							}
+						});
+
+						if (textLabel) {
+							tl.fromTo(textLabel,
+								{ opacity: 0, y: 15, scale: 0.95 },
+								{ opacity: 1, y: 0, scale: 1, duration: 0.7, ease: 'power2.out' }
+							);
+						}
+
+						if (card) {
+							tl.fromTo(card,
+								{ opacity: 0, y: 25 },
+								{ opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+								'-=0.3'
+							);
+						}
+					});
+				});
+
+				// Escritorio: Animación paralela original
+				mm.add("(min-width: 768px)", () => {
+					serviceRows.forEach(row => {
+						const card = row.querySelector('.glass-card');
+						const textLabel = row.querySelector('.select-none');
+						
+						if (card) {
+							const isLeft = row.children[0].contains(card);
+							// @ts-ignore
+							gsap.from(card, {
+								opacity: 0,
+								x: isLeft ? -80 : 80,
+								duration: 1.2,
+								ease: 'power3.out',
+								scrollTrigger: {
+									trigger: row,
+									start: 'top 75%',
+									toggleActions: 'play none none none'
+								}
+							});
+						}
+
+						if (textLabel) {
+							// @ts-ignore
+							gsap.from(textLabel, {
+								opacity: 0,
+								scale: 0.9,
+								duration: 1.5,
+								ease: 'power2.out',
+								scrollTrigger: {
+									trigger: row,
+									start: 'top 80%',
+									toggleActions: 'play none none none'
+								}
+							});
+						}
+					});
+				});
+
+				// 8. Sección de Tecnología (Features)
+				const techPillars = document.querySelectorAll('#tecnologia .grid > .glass-card');
+				if (techPillars.length > 0) {
+					// @ts-ignore
+					gsap.from(techPillars, {
+						opacity: 0,
+						y: 40,
+						scale: 0.95,
+						stagger: 0.15,
+						duration: 1,
+						ease: 'power3.out',
+						scrollTrigger: {
+							trigger: '#tecnologia',
+							start: 'top 70%',
+							toggleActions: 'play none none none'
+						}
+					});
+				}
+
+				// 9. Sección de Precios (Planos de Solución)
+				const pricingCards = document.querySelectorAll('#paquetes .glass-card');
+				if (pricingCards.length > 0) {
+					// @ts-ignore
+					gsap.from(pricingCards, {
+						opacity: 0,
+						y: 60,
+						scale: 0.95,
+						stagger: 0.2,
+						duration: 1,
+						ease: 'power3.out',
+						scrollTrigger: {
+							trigger: '#paquetes',
+							start: 'top 70%',
+							toggleActions: 'play none none none'
+						}
+					});
+				}
+
+				// 10. Sección de Equipo
+				const teamCards = document.querySelectorAll('#equipo .group');
+				if (teamCards.length > 0) {
+					// @ts-ignore
+					gsap.from(teamCards, {
+						opacity: 0,
+						y: 50,
+						stagger: 0.2,
+						duration: 1,
+						ease: 'power3.out',
+						scrollTrigger: {
+							trigger: '#equipo',
+							start: 'top 70%',
+							toggleActions: 'play none none none'
+						}
+					});
+				}
+			});
+		</script>
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+	/* Any additional global overrides can go here */
 </style>

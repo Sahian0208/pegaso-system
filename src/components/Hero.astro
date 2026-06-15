@@ -1,0 +1,75 @@
+---
+---
+<section id="inicio" class="relative min-h-screen flex flex-col pt-32 pb-12 overflow-hidden bg-cosmos-dark" style="background-image: url('/constelacion.png'); background-size: cover; background-position: center;">
+  <!-- Dark overlay for text readability -->
+  <div class="absolute inset-0 bg-cosmos-dark/70 backdrop-blur-[2px]"></div>
+  
+  <div class="absolute inset-0 bg-stars"></div>
+  
+  <!-- Lluvia de meteoritos intensa -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <!-- Capa 1: Lentos -->
+    <div class="shooting-star" style="top: 10%; left: -10%; animation-delay: 0s; animation-duration: 15s;"></div>
+    <div class="shooting-star" style="top: 30%; left: 40%; animation-delay: 4s; animation-duration: 12s;"></div>
+    <div class="shooting-star" style="top: 60%; left: -20%; animation-delay: 8s; animation-duration: 18s;"></div>
+    
+    <!-- Capa 2: Rápidos y pequeños (Meteoritos) -->
+    <div class="meteorite" style="top: 5%; left: 10%; animation-delay: 2s; animation-duration: 3s;"></div>
+    <div class="meteorite" style="top: 25%; left: 50%; animation-delay: 5s; animation-duration: 4s;"></div>
+    <div class="meteorite" style="top: 15%; left: 80%; animation-delay: 1s; animation-duration: 2.5s;"></div>
+    <div class="meteorite" style="top: 45%; left: 5%; animation-delay: 7s; animation-duration: 3.5s;"></div>
+    <div class="meteorite" style="top: 70%; left: 60%; animation-delay: 3s; animation-duration: 2.8s;"></div>
+    <div class="meteorite" style="top: 85%; left: 20%; animation-delay: 9s; animation-duration: 4.2s;"></div>
+    <div class="meteorite" style="top: -10%; left: 70%; animation-delay: 6s; animation-duration: 3.1s;"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-grow flex items-center justify-center pb-24">
+    
+    <div class="text-center w-full max-w-4xl mx-auto flex flex-col items-center">
+      <h2 class="animate-on-scroll fade-in-up text-gold-deep font-bold tracking-[0.4em] uppercase text-xs sm:text-sm mb-6 border-b border-gray-600/50 pb-2 inline-block" style="transition-delay: 100ms;">EXCELENCIA EN SOFTWARE</h2>
+      
+      <h1 class="animate-on-scroll fade-in-up flex flex-col mb-6 items-center" style="transition-delay: 300ms;">
+        <span class="font-montserrat text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black uppercase tracking-wider" style="color: #121420; text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25), -1px -1px 2px rgba(0, 0, 0, 0.8), 0 0 18px rgba(255, 255, 255, 0.55), 0 0 35px rgba(255, 255, 255, 0.25), 0 0 50px rgba(59, 130, 246, 0.15); filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));">PEGASO</span>
+        <span class="font-montserrat font-black text-3xl sm:text-4xl md:text-6xl tracking-[0.3em] uppercase mt-[-10px] sm:mt-[-15px] md:mt-[-20px]" style="color: #121420; text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2), 0 0 12px rgba(255, 255, 255, 0.45), 0 0 25px rgba(255, 255, 255, 0.2), 0 0 35px rgba(59, 130, 246, 0.1);">SYSTEM</span>
+      </h1>
+      
+      <p id="hero-desc" class="animate-on-scroll fade-in-up text-lg sm:text-xl md:text-2xl text-gray-300 font-montserrat font-light tracking-wide max-w-3xl mb-12 leading-relaxed drop-shadow-md" style="transition-delay: 500ms;">
+        Su organización merece una infraestructura de software de alto nivel. Desarrollamos soluciones tecnológicas robustas, eficientes y preparadas para el futuro.
+      </p>
+      
+      <div id="hero-buttons" class="animate-on-scroll fade-in-up flex flex-col sm:flex-row gap-6 justify-center items-center" style="transition-delay: 700ms;">
+        <a href="#servicios" class="glass-card text-white font-bold py-4 px-12 border border-cosmos-blue/50 hover:border-cosmos-blue hover:bg-cosmos-blue/10 transition-all text-sm uppercase tracking-widest text-center shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] min-w-[220px] scale-100 hover:scale-105">
+          Ver Servicios
+        </a>
+        <a href="#paquetes" class="glass-card text-cosmos-red font-bold py-4 px-12 border border-cosmos-red/40 hover:border-cosmos-red hover:bg-cosmos-red/10 transition-all text-sm uppercase tracking-widest text-center shadow-[0_0_15px_rgba(96,165,250,0.1)] hover:shadow-[0_0_25px_rgba(96,165,250,0.25)] min-w-[220px] scale-100 hover:scale-105">
+          Planos de Solución
+        </a>
+        <a href="#contacto" class="text-gray-300 hover:text-cosmos-blue border border-transparent hover:border-cosmos-blue/30 py-4 px-12 transition-all text-sm uppercase tracking-widest text-center font-bold min-w-[220px] scale-100 hover:scale-105">
+          Iniciar Consulta
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Wavy Divider adapted for dark mode -->
+  <div class="absolute bottom-0 w-full overflow-hidden leading-[0] transform translate-y-1 z-20">
+    <svg class="relative block w-[calc(100%+1.3px)] h-[80px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C52.16,93.45,103.9,82.16,154,71.2,209.68,59,265.2,46.85,321.39,56.44Z" fill="#131726"></path>
+    </svg>
+  </div>
+</section>
+
+<style>
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+  .animate-pulse-slow {
+    animation: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+</style>

@@ -1,0 +1,75 @@
+---
+import ServiceCard from './ServiceCard.astro';
+---
+<section id="servicios" class="py-24 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">¿Cuál es tu Signo? Descubre el Servicio que Necesitas</h2>
+      <p class="text-gray-400 text-sm md:text-base">
+        Nuestras soluciones tecnológicas representadas por las constelaciones más poderosas del cosmos.
+      </p>
+    </div>
+
+    <!-- 5 Columns grid like the reference image -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      
+      <ServiceCard 
+        title="Tauro" 
+        description="Protegemos tus sistemas con defensas robustas e impenetrables."
+        iconType="tauro"
+      >
+        <!-- Custom neon blue path for tauro -->
+        <svg slot="icon" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4" />
+        </svg>
+        <span slot="constellation-name">Seguridad</span>
+      </ServiceCard>
+
+      <ServiceCard 
+        title="Fénix" 
+        description="Backups automáticos para renacer de las cenizas ante desastres."
+        iconType="fenix"
+      >
+        <svg slot="icon" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+        <span slot="constellation-name">Backups</span>
+      </ServiceCard>
+
+      <ServiceCard 
+        title="Aries" 
+        description="Mantenemos y reparamos tu código para un funcionamiento perfecto."
+        iconType="aries"
+      >
+        <svg slot="icon" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+        </svg>
+        <span slot="constellation-name">Soporte</span>
+      </ServiceCard>
+
+      <ServiceCard 
+        title="Andrómeda" 
+        description="Integración de APIs con cadenas inquebrantables de comunicación."
+        iconType="andromeda"
+      >
+        <svg slot="icon" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+        </svg>
+        <span slot="constellation-name">Redes API</span>
+      </ServiceCard>
+
+      <ServiceCard 
+        title="Pegaso" 
+        description="Escalabilidad SaaS y rendimiento a la velocidad de la luz."
+        iconType="pegaso"
+      >
+        <svg slot="icon" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+        <span slot="constellation-name">Rendimiento</span>
+      </ServiceCard>
+      
+    </div>
+  </div>
+</section>

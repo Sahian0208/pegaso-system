@@ -1,0 +1,50 @@
+---
+---
+<header class="fixed top-0 w-full z-50 transition-all duration-300 bg-cosmos-dark/80 backdrop-blur-md border-b border-gray-800" id="navbar">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4 md:py-5 transition-all duration-300" id="navbar-inner">
+      <div class="flex items-center">
+        <a href="/" class="flex items-center group relative h-14 w-32 sm:w-40 md:w-48">
+          <img id="nav-logo" src="/logo-pegaso.png" alt="Pegaso System Logo" class="absolute left-0 top-1/2 -translate-y-1/2 h-32 sm:h-38 md:h-44 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] group-hover:drop-shadow-[0_0_18px_rgba(255,255,255,0.6)] transition-all duration-300" />
+        </a>
+      </div>
+      <nav class="hidden md:flex space-x-8">
+        <a href="#servicios" class="text-white hover:text-gold-bright transition-colors font-medium text-sm uppercase tracking-widest text-glow hover:scale-105 transform">Servicios</a>
+        <a href="#tecnologia" class="text-white hover:text-gold-bright transition-colors font-medium text-sm uppercase tracking-widest text-glow hover:scale-105 transform">Tecnología</a>
+        <a href="#contacto" class="text-white hover:text-gold-bright transition-colors font-medium text-sm uppercase tracking-widest text-glow hover:scale-105 transform">Contacto</a>
+      </nav>
+      <div class="md:hidden">
+        <button class="text-white hover:text-gold-bright focus:outline-none">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    const navbarInner = document.getElementById('navbar-inner');
+    const logo = document.getElementById('nav-logo');
+    if (window.scrollY > 20) {
+      navbar?.classList.add('glass-card');
+      navbarInner?.classList.add('py-2', 'md:py-3');
+      navbarInner?.classList.remove('py-4', 'md:py-5');
+      if (logo) {
+        logo.classList.remove('h-32', 'sm:h-38', 'md:h-44');
+        logo.classList.add('h-22', 'sm:h-26', 'md:h-30');
+      }
+    } else {
+      navbar?.classList.remove('glass-card');
+      navbarInner?.classList.remove('py-2', 'md:py-3');
+      navbarInner?.classList.add('py-4', 'md:py-5');
+      if (logo) {
+        logo.classList.remove('h-22', 'sm:h-26', 'md:h-30');
+        logo.classList.add('h-32', 'sm:h-38', 'md:h-44');
+      }
+    }
+  });
+</script>

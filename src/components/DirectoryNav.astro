@@ -1,0 +1,62 @@
+---
+---
+<nav class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex flex-col gap-6 items-end" id="directory-nav">
+  <a href="#inicio" class="group flex items-center gap-4 cursor-pointer" data-target="inicio">
+    <span class="text-xs uppercase tracking-[0.2em] text-gold-deep opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-bold">Inicio</span>
+    <div class="w-2 h-2 rounded-full bg-gray-600 transition-all duration-300 group-hover:bg-gold-bright group-hover:scale-150 nav-dot"></div>
+  </a>
+  <a href="#servicios" class="group flex items-center gap-4 cursor-pointer" data-target="servicios">
+    <span class="text-xs uppercase tracking-[0.2em] text-gold-deep opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-bold">Servicios</span>
+    <div class="w-2 h-2 rounded-full bg-gray-600 transition-all duration-300 group-hover:bg-gold-bright group-hover:scale-150 nav-dot"></div>
+  </a>
+  <a href="#tecnologia" class="group flex items-center gap-4 cursor-pointer" data-target="tecnologia">
+    <span class="text-xs uppercase tracking-[0.2em] text-gold-deep opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-bold">Tecnología</span>
+    <div class="w-2 h-2 rounded-full bg-gray-600 transition-all duration-300 group-hover:bg-gold-bright group-hover:scale-150 nav-dot"></div>
+  </a>
+  <a href="#paquetes" class="group flex items-center gap-4 cursor-pointer" data-target="paquetes">
+    <span class="text-xs uppercase tracking-[0.2em] text-gold-deep opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-bold">Planes</span>
+    <div class="w-2 h-2 rounded-full bg-gray-600 transition-all duration-300 group-hover:bg-gold-bright group-hover:scale-150 nav-dot"></div>
+  </a>
+  <a href="#equipo" class="group flex items-center gap-4 cursor-pointer" data-target="equipo">
+    <span class="text-xs uppercase tracking-[0.2em] text-gold-deep opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-bold">Equipo</span>
+    <div class="w-2 h-2 rounded-full bg-gray-600 transition-all duration-300 group-hover:bg-gold-bright group-hover:scale-150 nav-dot"></div>
+  </a>
+</nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('#directory-nav a');
+    
+    // Observer para resaltar la sección actual en el sidebar
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            const dot = link.querySelector('.nav-dot');
+            const text = link.querySelector('span');
+            
+            if (link.getAttribute('href') === `#${id}`) {
+              dot.classList.add('bg-gold-bright', 'scale-150', 'shadow-[0_0_10px_rgba(248,250,252,0.8)]');
+              dot.classList.remove('bg-gray-600');
+              text.classList.add('opacity-100', 'text-gold-bright');
+              text.classList.remove('text-gold-deep');
+            } else {
+              dot.classList.remove('bg-gold-bright', 'scale-150', 'shadow-[0_0_10px_rgba(248,250,252,0.8)]');
+              dot.classList.add('bg-gray-600');
+              text.classList.remove('opacity-100', 'text-gold-bright');
+              text.classList.add('text-gold-deep');
+            }
+          });
+        }
+      });
+    }, {
+      rootMargin: "-40% 0px -40% 0px"
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+</script>
