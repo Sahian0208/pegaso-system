@@ -28,22 +28,23 @@
 
         <!-- Diagrama SVG Explicativo (Grande, Centrado, Brillante y Compacto) -->
         <div class="w-full flex items-center justify-center py-2 mb-2">
-          <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.6" class="w-full max-w-[280px] h-20 sm:h-24 text-gray-300 group-hover:text-emerald-400 transition-colors">
+          <svg viewBox="0 0 300 80" fill="none" stroke="currentColor" stroke-width="1.6" class="w-full max-w-[280px] h-20 sm:h-24 text-gray-300 group-hover:text-emerald-400 transition-colors">
             <!-- Server A -->
-            <rect x="10" y="5" width="55" height="22" rx="3" fill="currentColor" fill-opacity="0.08" />
-            <circle cx="20" cy="16" r="2.5" fill="currentColor" />
-            <line x1="28" y1="16" x2="55" y2="16" />
-            <text x="10" y="42" fill="#E2E8F0" font-size="7.5" font-family="sans-serif" class="font-semibold tracking-wide">Servidor Principal</text>
+            <rect x="25" y="10" width="60" height="25" rx="3" fill="currentColor" fill-opacity="0.08" />
+            <circle cx="37" cy="22" r="2.5" fill="currentColor" />
+            <line x1="47" y1="22" x2="75" y2="22" />
+            <text x="55" y="52" fill="#E2E8F0" stroke="none" font-size="8.5" font-family="sans-serif" text-anchor="middle" class="font-medium tracking-wide">Servidor Principal</text>
+
+            <!-- Enlace Redundante -->
+            <path d="M95 22 h110" stroke-dasharray="3 3" />
+            <path d="M152 18 l6 4-6 4" fill="currentColor" stroke="none" />
+            <text x="150" y="14" fill="#94A3B8" stroke="none" font-size="6.5" font-family="sans-serif" text-anchor="middle" class="tracking-wider uppercase">Auto-Soporte</text>
 
             <!-- Server B (Backup) -->
-            <rect x="135" y="5" width="55" height="22" rx="3" fill="currentColor" fill-opacity="0.08" />
-            <circle cx="145" cy="16" r="2.5" fill="currentColor" />
-            <line x1="153" y1="16" x2="180" y2="16" />
-            <text x="135" y="42" fill="#E2E8F0" font-size="7.5" font-family="sans-serif" class="font-semibold tracking-wide">Respaldo Activo</text>
-
-            <!-- Connection line with arrow -->
-            <path d="M75 16 h50" stroke-dasharray="3 3" />
-            <path d="M102 12 l6 4-6 4" fill="currentColor" stroke="none" />
+            <rect x="215" y="10" width="60" height="25" rx="3" fill="currentColor" fill-opacity="0.08" />
+            <circle cx="227" cy="22" r="2.5" fill="currentColor" />
+            <line x1="237" y1="22" x2="265" y2="22" />
+            <text x="245" y="52" fill="#E2E8F0" stroke="none" font-size="8.5" font-family="sans-serif" text-anchor="middle" class="font-medium tracking-wide">Respaldo Activo</text>
           </svg>
         </div>
 
@@ -63,24 +64,25 @@
 
         <!-- Diagrama SVG Explicativo (Grande, Centrado, Brillante y Compacto) -->
         <div class="w-full flex items-center justify-center py-2 mb-2">
-          <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.6" class="w-full max-w-[320px] h-20 sm:h-24 text-gray-300 group-hover:text-cosmos-blue transition-colors">
+          <svg viewBox="0 0 300 80" fill="none" stroke="currentColor" stroke-width="1.6" class="w-full max-w-[320px] h-20 sm:h-24 text-gray-300 group-hover:text-cosmos-blue transition-colors">
             <!-- Data Node -->
-            <circle cx="35" cy="20" r="12" fill="currentColor" fill-opacity="0.08" />
-            <path d="M31 18 h8 v6 h-8 z" />
-            <circle cx="35" cy="14" r="3" />
-            <text x="12" y="44" fill="#E2E8F0" font-size="7.5" font-family="sans-serif" class="font-semibold tracking-wide">Datos Protegidos</text>
+            <circle cx="55" cy="22" r="14" fill="currentColor" fill-opacity="0.08" />
+            <!-- Padlock visual inside circle -->
+            <path d="M51 20 h8 v6 h-8 z" />
+            <path d="M53 20 v-3 a2 2 0 0 1 4 0 v3" />
+            <text x="55" y="52" fill="#E2E8F0" stroke="none" font-size="8.5" font-family="sans-serif" text-anchor="middle" class="font-medium tracking-wide">Datos Protegidos</text>
             
             <!-- Firewall Barrier -->
-            <path d="M85 8 v30" stroke-dasharray="2 2" />
-            <text x="70" y="48" fill="#94A3B8" font-size="6.5" font-family="sans-serif">Muro de Seguridad</text>
+            <path d="M150 8 v28" stroke-dasharray="2 2" />
+            <text x="150" y="52" fill="#94A3B8" stroke="none" font-size="6.5" font-family="sans-serif" text-anchor="middle" class="tracking-wider uppercase">Filtro Zero-Trust</text>
             
             <!-- Shield -->
-            <path d="M140 16 c0-5 8-8 20-8 s20 3 20 8 c0 15-8 25-20 30 c-12-5-20-15-20-30 z" fill="currentColor" fill-opacity="0.08" />
-            <path d="M150 22 l6 6 l10-10" stroke-width="2.2" />
-            <text x="138" y="52" fill="#E2E8F0" font-size="7.5" font-family="sans-serif" class="font-semibold tracking-wide">Escudo de Red</text>
+            <path d="M225 20 c0-6 10-10 20-10 s20 4 20 10 c0 18-10 28-20 33 c-10-5-20-15-20-33 z" fill="currentColor" fill-opacity="0.08" />
+            <path d="M237 26 l6 6 l10-10" stroke-width="2.2" />
+            <text x="245" y="52" fill="#E2E8F0" stroke="none" font-size="8.5" font-family="sans-serif" text-anchor="middle" class="font-medium tracking-wide">Protección Activa</text>
 
             <!-- Arrows connecting -->
-            <path d="M52 20 h28 M90 20 h45" />
+            <path d="M75 22 h65 M160 22 h58" />
           </svg>
         </div>
 
@@ -100,25 +102,25 @@
 
         <!-- Diagrama SVG Explicativo (Grande, Centrado, Brillante y Compacto) -->
         <div class="w-full flex items-center justify-center py-2 mb-2">
-          <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.6" class="w-full max-w-[320px] h-20 sm:h-24 text-gray-300 group-hover:text-amber-400 transition-colors">
+          <svg viewBox="0 0 300 80" fill="none" stroke="currentColor" stroke-width="1.6" class="w-full max-w-[320px] h-20 sm:h-24 text-gray-300 group-hover:text-amber-400 transition-colors">
             <!-- Data Input -->
-            <rect x="10" y="8" width="45" height="20" rx="3" fill="currentColor" fill-opacity="0.08" />
-            <line x1="18" y1="18" x2="35" y2="18" stroke-width="2" />
-            <text x="10" y="42" fill="#E2E8F0" font-size="7.5" font-family="sans-serif" class="font-semibold tracking-wide">Datos Operativos</text>
+            <rect x="25" y="10" width="60" height="24" rx="3" fill="currentColor" fill-opacity="0.08" />
+            <line x1="35" y1="22" x2="75" y2="22" stroke-width="2" />
+            <text x="55" y="52" fill="#E2E8F0" stroke="none" font-size="8.5" font-family="sans-serif" text-anchor="middle" class="font-medium tracking-wide">Datos de Ventas</text>
             
             <!-- IA Processing Node -->
-            <circle cx="95" cy="18" r="10" stroke-dasharray="2 2" />
+            <circle cx="150" cy="22" r="12" stroke-dasharray="2 2" />
             <!-- Small stars to represent AI spark -->
-            <path d="M93 16l2 2 2-2-2-2z M97 22l1 1 1-1-1-1z" fill="currentColor" stroke="none" />
-            <text x="80" y="42" fill="#E2E8F0" font-size="7.5" font-family="sans-serif" class="font-semibold tracking-wide">Inteligencia Artificial</text>
+            <path d="M148 20l2 2 2-2-2-2z M152 26l1 1 1-1-1-1z" fill="currentColor" stroke="none" />
+            <text x="150" y="52" fill="#E2E8F0" stroke="none" font-size="8.5" font-family="sans-serif" text-anchor="middle" class="font-medium tracking-wide">Procesamiento IA</text>
 
             <!-- Output Dashboard -->
-            <rect x="145" y="8" width="45" height="22" rx="3" fill="currentColor" fill-opacity="0.08" stroke-width="1.5" />
-            <path d="M150 24 l10-8 l6 4 l12-10" stroke-width="1.8" />
-            <text x="142" y="42" fill="#E2E8F0" font-size="7.5" font-family="sans-serif" class="font-semibold tracking-wide">Gráficos y Métricas</text>
+            <rect x="215" y="10" width="60" height="24" rx="3" fill="currentColor" fill-opacity="0.08" stroke-width="1.5" />
+            <path d="M225 26 l10-8 l6 4 l12-10" stroke-width="1.8" />
+            <text x="245" y="52" fill="#E2E8F0" stroke="none" font-size="8.5" font-family="sans-serif" text-anchor="middle" class="font-medium tracking-wide">Gráficos y Reportes</text>
             
             <!-- Connection arrows -->
-            <path d="M60 18 h20 M110 18 h30" />
+            <path d="M90 22 h48 M162 22 h48" />
           </svg>
         </div>
 
@@ -138,22 +140,22 @@
 
         <!-- Diagrama SVG Explicativo (Grande, Centrado, Brillante y Compacto) -->
         <div class="w-full flex items-center justify-center py-2 mb-2">
-          <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="1.6" class="w-full max-w-[280px] h-20 sm:h-24 text-gray-300 group-hover:text-indigo-400 transition-colors">
+          <svg viewBox="0 0 300 80" fill="none" stroke="currentColor" stroke-width="1.6" class="w-full max-w-[280px] h-20 sm:h-24 text-gray-300 group-hover:text-indigo-400 transition-colors">
             <!-- Device -->
-            <rect x="15" y="8" width="22" height="28" rx="2" fill="currentColor" fill-opacity="0.08" />
-            <line x1="26" y1="32" x2="26" y2="32" stroke-width="2" />
-            <text x="12" y="48" fill="#E2E8F0" font-size="7.5" font-family="sans-serif" class="font-semibold tracking-wide">Diseño Visual</text>
+            <rect x="35" y="8" width="40" height="28" rx="2" fill="currentColor" fill-opacity="0.08" />
+            <line x1="55" y1="32" x2="55" y2="32" stroke-width="2" />
+            <text x="55" y="52" fill="#E2E8F0" stroke="none" font-size="8.5" font-family="sans-serif" text-anchor="middle" class="font-medium tracking-wide">Diseño Frontend</text>
 
             <!-- Lightning / Speed Arrow -->
-            <path d="M60 22 l15 0-5 10 15-12-15 0 5-10z" fill="currentColor" stroke="none" />
-            <text x="50" y="46" fill="#94A3B8" font-size="6.5" font-family="sans-serif">Velocidad Máxima</text>
+            <path d="M142 16 l12 0-4 8 12-10-12 0 4-8z" fill="currentColor" stroke="none" />
+            <text x="150" y="52" fill="#94A3B8" stroke="none" font-size="6.5" font-family="sans-serif" text-anchor="middle" class="tracking-wider uppercase">Carga Inmediata</text>
             
             <!-- Cloud Database -->
-            <path d="M140 28 c-3-2-3-8 1-10 c1-4 6-6 10-4 c2-2 7-2 9 1 c3-1 7 2 6 6 c2 1 2 6-1 7 z" fill="currentColor" fill-opacity="0.08" />
-            <text x="132" y="48" fill="#E2E8F0" font-size="7.5" font-family="sans-serif" class="font-semibold tracking-wide">Servidor en la Nube</text>
+            <path d="M225 28 c-3-2-3-8 1-10 c1-4 6-6 10-4 c2-2 7-2 9 1 c3-1 7 2 6 6 c2 1 2 6-1 7 z" fill="currentColor" fill-opacity="0.08" />
+            <text x="245" y="52" fill="#E2E8F0" stroke="none" font-size="8.5" font-family="sans-serif" text-anchor="middle" class="font-medium tracking-wide">Nube de Datos</text>
             
             <!-- Connections -->
-            <path d="M42 22 h12 M112 22 h23" stroke-dasharray="2 2" />
+            <path d="M80 22 h48 M168 22 h50" stroke-dasharray="2 2" />
           </svg>
         </div>
 
