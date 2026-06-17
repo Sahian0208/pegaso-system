@@ -306,24 +306,7 @@ const { title, description = "Pegaso System - Desarrollo de Software Comercial y
 					});
 				}
 
-				// 8b. Sección de Soluciones (Solutions)
-				const solutionCards = document.querySelectorAll('#soluciones .grid > .glass-card');
-				if (solutionCards.length > 0) {
-					// @ts-ignore
-					gsap.from(solutionCards, {
-						opacity: 0,
-						y: 45,
-						scale: 0.95,
-						stagger: 0.15,
-						duration: 1,
-						ease: 'power3.out',
-						scrollTrigger: {
-							trigger: '#soluciones',
-							start: 'top 75%',
-							toggleActions: 'play none none none'
-						}
-					});
-				}
+
 
 				// 9. Sección de Precios (Planos de Solución)
 				const pricingCards = document.querySelectorAll('#paquetes .glass-card');
