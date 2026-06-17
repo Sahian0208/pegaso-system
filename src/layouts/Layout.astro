@@ -233,6 +233,25 @@ const { title, description = "Pegaso System - Desarrollo de Software Comercial y
 					});
 				});
 
+				// 7b. Sección de Desafíos (Problems)
+				const challengeCards = document.querySelectorAll('#desafios .grid > .glass-card');
+				if (challengeCards.length > 0) {
+					// @ts-ignore
+					gsap.from(challengeCards, {
+						opacity: 0,
+						y: 40,
+						scale: 0.95,
+						stagger: 0.1,
+						duration: 0.8,
+						ease: 'power3.out',
+						scrollTrigger: {
+							trigger: '#desafios',
+							start: 'top 75%',
+							toggleActions: 'play none none none'
+						}
+					});
+				}
+
 				// 8. Sección de Tecnología (Features)
 				const techPillars = document.querySelectorAll('#tecnologia .grid > .glass-card');
 				if (techPillars.length > 0) {
