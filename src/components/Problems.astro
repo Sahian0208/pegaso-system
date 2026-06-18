@@ -130,52 +130,68 @@
 
     </div>
 
-    <!-- Redesigned CTA Section: Modern Split-Row Banner (Vitaly style layout) -->
-    <div class="animate-on-scroll glass-card max-w-5xl mx-auto rounded-2xl border border-gray-800/50 relative overflow-hidden group shadow-[0_0_40px_rgba(59,130,246,0.1)] hover:border-cosmos-blue/20 transition-all duration-500" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, rgba(11, 17, 32, 0.08) 100%);">
-      <!-- Background Ambient Glow -->
-      <div class="absolute right-0 top-0 w-80 h-80 bg-cosmos-blue/10 rounded-full blur-[80px] pointer-events-none -z-10 group-hover:bg-cosmos-blue/15 transition-all duration-500"></div>
+    <!-- Redesigned CTA Section: Modern Split-Row Banner -->
+    <div class="animate-on-scroll glass-card p-8 md:p-10 max-w-5xl mx-auto rounded-2xl border border-gray-800/50 relative overflow-hidden group shadow-[0_0_40px_rgba(59,130,246,0.1)] hover:border-cosmos-blue/30 transition-all duration-500" style="background: linear-gradient(135deg, rgba(3, 7, 18, 0.8) 0%, rgba(11, 17, 32, 0.9) 100%);">
+      <!-- Background Ambient Glows on Left and Right -->
+      <div class="absolute left-0 top-0 w-72 h-72 bg-gold-deep/5 rounded-full blur-[60px] pointer-events-none -z-10 group-hover:bg-gold-deep/10 transition-all duration-500"></div>
+      <div class="absolute right-0 bottom-0 w-72 h-72 bg-cosmos-blue/10 rounded-full blur-[60px] pointer-events-none -z-10 group-hover:bg-cosmos-blue/15 transition-all duration-500"></div>
       
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-0 p-8 md:p-10 relative z-10 items-center">
-        <!-- Left Column: Branding (vitaly style photo/name) -->
-        <div class="md:col-span-6 flex items-start gap-5 pr-0 md:pr-8 md:border-r md:border-gray-800/60 h-full justify-center md:justify-start">
-          <!-- Logo Circle Wrapper -->
-          <div class="w-16 h-16 rounded-full bg-cosmos-dark/40 border border-gray-800 flex items-center justify-center overflow-hidden shrink-0 shadow-[0_0_15px_rgba(59,130,246,0.1)] group-hover:border-cosmos-blue/20 transition-all duration-500">
-            <img src="/logo-pegaso.png" alt="Pegasus Icon" class="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-500" />
-          </div>
-          <div class="flex flex-col">
-            <span class="text-[9px] uppercase tracking-[0.25em] text-gold-deep font-bold mb-1">Tecnología de Vanguardia</span>
-            <h4 class="text-xl font-heading font-semibold text-white tracking-wide mb-1 group-hover:text-gold-bright transition-colors">Pegasus Nexus</h4>
-            <p class="text-xs text-gray-400 font-montserrat font-light leading-relaxed max-w-sm">
-              Ingeniería de software de alto nivel diseñada para dar control absoluto y automatización a tu organización.
-            </p>
-            <a href="https://wa.me/59179786916" target="_blank" rel="noopener noreferrer" class="text-[10px] text-cosmos-blue hover:text-gold-bright transition-colors font-bold tracking-widest uppercase mt-3 inline-flex items-center gap-1.5 cursor-pointer">
-              Hablar con un consultor &rarr;
-            </a>
-          </div>
-        </div>
+      <!-- Neural / Constellation Vector Decorators (Left and Right) -->
+      <div class="absolute left-[-2%] top-1/2 -translate-y-1/2 w-48 h-full opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none -z-10 select-none">
+        <svg viewBox="0 0 100 100" class="w-full h-full text-gold-deep" fill="none" stroke="currentColor" stroke-width="0.8">
+          <circle cx="10" cy="30" r="2" fill="currentColor"></circle>
+          <circle cx="40" cy="20" r="1.5" fill="currentColor"></circle>
+          <circle cx="30" cy="60" r="2" fill="currentColor"></circle>
+          <circle cx="20" cy="80" r="1.5" fill="currentColor"></circle>
+          <line x1="10" y1="30" x2="40" y2="20"></line>
+          <line x1="10" y1="30" x2="30" y2="60"></line>
+          <line x1="40" y1="20" x2="30" y2="60"></line>
+          <line x1="30" y1="60" x2="20" y2="80"></line>
+        </svg>
+      </div>
+      <div class="absolute right-[-2%] top-1/2 -translate-y-1/2 w-48 h-full opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none -z-10 select-none">
+        <svg viewBox="0 0 100 100" class="w-full h-full text-cosmos-blue" fill="none" stroke="currentColor" stroke-width="0.8">
+          <circle cx="90" cy="40" r="2" fill="currentColor"></circle>
+          <circle cx="60" cy="30" r="1.5" fill="currentColor"></circle>
+          <circle cx="70" cy="70" r="2" fill="currentColor"></circle>
+          <circle cx="80" cy="20" r="1.5" fill="currentColor"></circle>
+          <line x1="90" y1="40" x2="60" y2="30"></line>
+          <line x1="90" y1="40" x2="70" y2="70"></line>
+          <line x1="60" y1="30" x2="70" y2="70"></line>
+          <line x1="60" y1="30" x2="80" y2="20"></line>
+        </svg>
+      </div>
 
-        <!-- Right Column: Call to Action (Vitaly style title/button/avatars) -->
-        <div class="md:col-span-6 flex flex-col pl-0 md:pl-8 justify-center h-full">
-          <h4 class="text-lg md:text-xl text-white font-montserrat font-normal tracking-wide leading-relaxed mb-6 text-center md:text-left">
-            Pegasus Nexus convierte estos desafíos en <span class="italic text-gold-bright font-semibold text-glow block sm:inline">procesos digitales inteligentes</span>.
-          </h4>
-          
-          <div class="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start">
-            <a href="https://wa.me/59179786916?text=Hola%20Pegasus%20Nexus!%20Me%20gustar%C3%ADa%20solicitar%20un%20diagn%C3%B3stico%20para%20mi%20empresa%20y%20conocer%20c%C3%B3mo%20resolver%20nuestros%20desaf%C3%ADos." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-block text-center bg-gradient-to-r from-cosmos-blue to-indigo-600 text-white font-bold py-3.5 px-6 rounded-xl transition-all text-[10px] tracking-widest uppercase shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] hover:scale-105 transform cursor-pointer">
-              Solicitar Diagnóstico
-            </a>
-            
-            <div class="flex items-center gap-3 shrink-0">
-              <div class="flex items-center -space-x-2.5">
-                <img src="/team_ceo_1781276286351.png" class="w-8 h-8 rounded-full border-2 border-cosmos-dark object-cover shadow-lg" alt="Líder 1" />
-                <img src="/team_cto_1781276297082.png" class="w-8 h-8 rounded-full border-2 border-cosmos-dark object-cover shadow-lg" alt="Líder 2" />
-                <img src="/team_sec_1781276307925.png" class="w-8 h-8 rounded-full border-2 border-cosmos-dark object-cover shadow-lg" alt="Líder 3" />
-              </div>
-              <p class="text-[9px] text-gray-400 font-montserrat font-light leading-snug max-w-[120px]">
-                Únete a las empresas que optimizaron su gestión
-              </p>
-            </div>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+        <!-- Left content -->
+        <div class="max-w-2xl text-center md:text-left flex flex-col items-center md:items-start">
+          <!-- Pill Tag -->
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cosmos-blue/10 border border-cosmos-blue/20 text-glow text-[10px] uppercase tracking-wider text-cosmos-blue font-bold mb-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-cosmos-blue animate-pulse"></span>
+            Diagnóstico Nexus
           </div>
+          
+          <h3 class="text-xl md:text-3xl text-white font-heading font-normal tracking-wide mb-3 leading-snug">
+            Pegasus Nexus convierte estos desafíos en <span class="italic text-gold-bright font-semibold text-glow block sm:inline">procesos digitales inteligentes</span>.
+          </h3>
+          
+          <p class="text-xs sm:text-sm text-gray-400 font-montserrat font-light leading-relaxed">
+            Conectamos y automatizamos tus operaciones comerciales para maximizar la productividad y visibilidad de tu negocio.
+          </p>
+        </div>
+        
+        <!-- Right content -->
+        <div class="flex flex-col items-center justify-center shrink-0 w-full md:w-auto">
+          <a href="https://wa.me/59179786916?text=Hola%20Pegasus%20Nexus!%20Me%20gustar%C3%ADa%20solicitar%20un%20diagn%C3%B3stico%20para%20mi%20empresa%20y%20conocer%20c%C3%B3mo%20resolver%20nuestros%20desaf%C3%ADos." target="_blank" rel="noopener noreferrer" class="w-full md:w-auto flex items-center justify-center gap-3 bg-cosmos-dark border border-cosmos-blue/50 text-white font-bold py-4 px-8 sm:px-10 rounded-xl transition-all text-xs tracking-widest uppercase shadow-[0_0_20px_rgba(59,130,246,0.15)] hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:bg-cosmos-blue/10 hover:border-cosmos-blue hover:scale-105 transform duration-300 cursor-pointer group/btn">
+            Solicitar Diagnóstico Gratuito
+            <svg class="w-4 h-4 text-white group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+          
+          <p class="text-[10px] text-gray-500 font-montserrat font-light tracking-wide mt-3 text-center">
+            Sin costo de compromiso • Diagnóstico personalizado
+          </p>
         </div>
       </div>
     </div>
